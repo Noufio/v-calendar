@@ -120,6 +120,12 @@ export default locale => {
   const dayNamesNarrow = getDayNames(resolvedLocale, 'narrow');
   const monthNames = getMonthNames(resolvedLocale, 'long');
   const monthNamesShort = getMonthNames(resolvedLocale, 'short');
+    
+  const greekMonths = ["Ιανουάριος", "Φεβρουάριος", "Μάρτιος", "Απρίλιος", "Μάιος", "Ιούνιος", "Ιούλιος", "Αύγουστος", "Σεπτέμβριος", "Οκτώβριος", "Νοέμβριος", "Δεκέμβριος"];
+  if(locale == "el-GR") {
+    monthNames.map(function(v,k){ monthNames[k] = greekMonths[k];});
+  }
+    
   return {
     locale: resolvedLocale,
     firstDayOfWeek: localeExtra.dow,
